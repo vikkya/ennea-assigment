@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3" style="max-height: 100px !important">
+    <div class="row">
+        <div class="col">
+            <button id="expire" class="btn btn-primary">Expire</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="display nowrap" id="myTable">
+                <thead>
+                    <tr>
+                        {% for h in header %}
+                            <td class="text-capitalize">{{ h }}</td>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in results %}
+                    <tr>
+                            <td class="sc">{{ h['code'] }}</td>
+                            <td class="sc">{{ h['name'] }}</td>
+                            <td class="sc">{{ h['batch'] }}</td>
+                            <td class="sc">{{ h['stock'] }}</td>
+                            <td class="sc">{{ h['deal'] }}</td>
+                            <td class="sc">{{ h['free'] }}</td>
+                            <td class="sc">{{ h['mrp'] }}</td>
+                            <td class="sc">{{ h['rate'] }}</td>
+                            <td class="sc">{{ h['exp'] }}</td>
+                            <td class="sc">{{ h['company'] }}</td>
+                            <td class="sc">{{ h['supplier'] }}</td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

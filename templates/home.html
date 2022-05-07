@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Dashboard</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+              <form action="/dashboard" method="POST">
+                    <div class="mb-3">
+                    <label for="searchMain" class="form-label">Search a Supplier</label>
+                    <input type="text" class="form-control" name="search" id="mainSearch" aria-describedby="emailHelp" required autocomplete="off">
+                  </div>
+                  <button id="search_btn" type="submit" class="btn btn-primary">Search</button>
+              </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
